@@ -1,0 +1,33 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="1024" fill="#222425"/>
+
+  <g stroke="white" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Constellation lines -->
+    <line x1="368" y1="430" x2="432" y2="410" stroke-width="3" fill="none"/>
+    <line x1="432" y1="410" x2="500" y2="438" stroke-width="3" fill="none"/>
+    <line x1="500" y1="438" x2="574" y2="378" stroke-width="3" fill="none"/>
+    <line x1="500" y1="438" x2="452" y2="490" stroke-width="3" fill="none"/>
+    <line x1="500" y1="438" x2="558" y2="482" stroke-width="3" fill="none"/>
+
+    <!-- Arrow head -->
+    <polyline points="558,370 574,378 566,396" stroke-width="3" fill="none"/>
+
+    <!-- Star dots -->
+    <circle cx="368" cy="430" r="7" fill="white" stroke="none"/>
+    <circle cx="432" cy="410" r="7" fill="white" stroke="none"/>
+    <circle cx="500" cy="438" r="10" fill="white" stroke="none"/>
+    <circle cx="452" cy="490" r="7" fill="white" stroke="none"/>
+    <circle cx="558" cy="482" r="7" fill="white" stroke="none"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text
+    x="512" y="640"
+    text-anchor="middle"
+    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="72"
+    font-weight="500"
+    letter-spacing="20"
+    fill="white"
+  >SAGITTA</text>
+</svg>

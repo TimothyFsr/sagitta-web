@@ -1,26 +1,208 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-bg: #1c1e21;
+  --color-surface: #242628;
+  --color-border: #333538;
+  --color-text: #f0f0f0;
+  --color-muted: #8a8d91;
+  --color-accent: #ffffff;
+  --color-cta: #e8e0d0;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-border: var(--color-border);
+  --color-text: var(--color-text);
+  --color-muted: var(--color-muted);
+  --color-accent: var(--color-accent);
+  --color-cta: var(--color-cta);
+
+  --font-display: var(--font-dm-serif-display);
+  --font-body: var(--font-dm-sans);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* Page fade-in animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-in-out;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-body);
+  font-weight: 700;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+}
+
+/* Hide scrollbar for horizontal scroll sections */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Help page styles */
+.help-text {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--color-text);
+}
+
+.help-code {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: var(--color-accent);
+}
+
+.help-link {
+  color: var(--color-cta);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.help-link:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.help-steps {
+  counter-reset: step-counter;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.help-steps li {
+  counter-increment: step-counter;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--color-text);
+  padding-left: 3rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.help-steps li::before {
+  content: counter(step-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-accent);
+}
+
+.help-bullets {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.help-bullets li {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--color-text);
+  padding-left: 2rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.help-bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0.5rem;
+  color: var(--color-cta);
+  font-size: 20px;
+}
+
+.help-tip {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--color-surface);
+  border-left: 4px solid var(--color-cta);
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--color-text);
+}
+
+.help-tip strong {
+  color: var(--color-accent);
+}
+
+/* Mobile optimizations */
+@media (max-width: 375px) {
+  /* Prevent horizontal overflow */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Ensure all containers respect viewport */
+  .container {
+    max-width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Ensure tap targets are at least 44x44px */
+button,
+a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Spinner animation for loading states */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
 }
