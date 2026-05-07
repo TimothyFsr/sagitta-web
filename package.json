@@ -6,6 +6,7 @@
     "dev": "next dev",
     "prebuild": "npm ci",
     "build": "next build",
+    "serve": "next start",
     "start": "next start",
     "lint": "next lint",
     "license:generate": "node generate-license.js",
