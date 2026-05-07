@@ -14,5 +14,13 @@
     ],
     "createdAt": "2025-01-01T00:00:00.000Z",
     "revoked": false
+  },
+  "SGTA-R3C0-PNY0-URHD": {
+    "plan": "pro",
+    "maxActivations": 5,
+    "activations": [],
+    "createdAt": "2026-05-07T17:12:55.373Z",
+    "revoked": false,
+    "customerName": "Test User"
   }
 }
