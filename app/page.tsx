@@ -6,7 +6,7 @@ import FeatureCard from "@/components/FeatureCard";
 import PricingCard from "@/components/PricingCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import StepCard from "@/components/StepCard";
-import iPhoneMockup from "@/components/iPhoneMockup";
+import IPhoneMockup from "@/components/iPhoneMockup";
 import { FEATURES, PRICING_TIERS, TESTIMONIALS, STEPS } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -348,7 +348,7 @@ export default function Home() {
 
               {/* Right — iPhone Mockup */}
               <div className="flex justify-center lg:justify-end">
-                <iPhoneMockup 
+                <IPhoneMockup 
                   screenshot="/screenshot-remote-control.png"
                   alt="Sagitta Remote Control on iPhone"
                 />
