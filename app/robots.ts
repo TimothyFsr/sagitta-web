@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/*", "/data/*"],
     },
-    sitemap: "https://sagitta.app/sitemap.xml",
+    sitemap: "https://sagittascore.com/sitemap.xml",
   };
 }

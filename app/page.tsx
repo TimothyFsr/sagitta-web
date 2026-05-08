@@ -6,7 +6,6 @@ import FeatureCard from "@/components/FeatureCard";
 import PricingCard from "@/components/PricingCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import StepCard from "@/components/StepCard";
-import IPhoneMockup from "@/components/iPhoneMockup";
 import { FEATURES, PRICING_TIERS, TESTIMONIALS, STEPS } from "@/lib/constants";
 
 export const metadata: Metadata = {
@@ -346,12 +345,21 @@ export default function Home() {
                 </Link>
               </div>
 
-              {/* Right — iPhone Mockup */}
+              {/* Right — Remote Control Screenshot */}
               <div className="flex justify-center lg:justify-end">
-                <IPhoneMockup 
-                  screenshot="/screenshot-remote-control.png"
-                  alt="Sagitta Remote Control on iPhone"
-                />
+                <div className="bg-[#1c1e21] border border-[var(--color-border)] rounded-2xl p-8 shadow-2xl max-w-md">
+                  <Image
+                    src="/screenshot-remote-control.png"
+                    alt="Sagitta Remote Control Setup"
+                    width={1024}
+                    height={256}
+                    quality={90}
+                    className="w-full h-auto rounded-lg"
+                  />
+                  <p className="text-sm text-[var(--color-muted)] mt-4 text-center">
+                    Enable remote control in Settings and get a local URL
+                  </p>
+                </div>
               </div>
             </div>
           </div>

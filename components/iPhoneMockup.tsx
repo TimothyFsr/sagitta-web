@@ -14,14 +14,13 @@ export default function iPhoneMockup({ screenshot, alt }: iPhoneMockupProps) {
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-32 h-6 bg-[#1c1c1e] rounded-b-3xl z-10"></div>
         
         {/* Screen */}
-        <div className="relative bg-white rounded-[2.5rem] overflow-hidden aspect-[9/19.5]">
+        <div className="relative bg-[#1a1a1a] rounded-[2.5rem] overflow-hidden aspect-[9/19.5]">
           <Image
             src={screenshot}
             alt={alt}
-            width={375}
-            height={812}
+            fill
             quality={90}
-            className="w-full h-full object-cover object-top"
+            className="object-contain p-4"
           />
         </div>
         

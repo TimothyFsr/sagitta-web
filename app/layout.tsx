@@ -35,11 +35,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Sagitta" }],
   creator: "Sagitta",
   publisher: "Sagitta",
-  metadataBase: new URL("https://sagitta.app"),
+  metadataBase: new URL("https://sagittascore.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://sagitta.app",
+    url: "https://sagittascore.com",
     title: "Sagitta — Football Scoreboard Software for macOS",
     description:
       "Professional football scoreboard software for clubs, leagues, and stadium operators. Built for macOS.",
@@ -61,8 +61,12 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/logo-icon.svg", type: "image/svg+xml" },
+    ],
     apple: "/logo.png",
+    shortcut: "/favicon.ico",
   },
   robots: {
     index: true,
