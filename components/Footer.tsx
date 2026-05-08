@@ -52,10 +52,10 @@ export default function Footer() {
           {/* Right Column - Contact & Copyright */}
           <div className="space-y-3">
             <a
-              href="mailto:support@sagitta.app"
+              href="mailto:info@sagittascore.com"
               className="block text-[13px] text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors"
             >
-              support@sagitta.app
+              info@sagittascore.com
             </a>
             <p className="text-[13px] text-[var(--color-muted)]">
               © 2025 Sagitta. All rights reserved.

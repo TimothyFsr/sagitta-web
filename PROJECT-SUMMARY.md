@@ -242,7 +242,7 @@ SGTA-XXXX-XXXX-XXXX
 
 ## 👥 Support
 
-- Email: support@sagitta.app
+- Email: info@sagittascore.com
 - Response time: 24 hours on working days
 - Include: license key, macOS version, issue description
 

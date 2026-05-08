@@ -27,7 +27,7 @@ export const FEATURES = [
   },
   {
     title: "Offline Ready",
-    description: "Runs entirely local — no internet needed during the match.",
+    description: "Runs fully local during matches. License is checked at startup and includes a 7-day offline grace period.",
     icon: "wifi-off",
   },
 ] as const;

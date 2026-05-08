@@ -173,79 +173,89 @@ export default function DownloadPage() {
               A complete professional scoreboard system with intuitive controls and powerful customization.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Match Control */}
+            {/* Screenshots only */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
               <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-xl overflow-hidden">
                 <Image
                   src="/screenshot-match-control.png"
-                  alt="Sagitta Match Control Panel"
+                  alt="Screenshot 1 - Match control panel"
                   width={600}
                   height={400}
                   className="w-full h-auto"
                 />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-[var(--color-accent)] mb-2">
-                    Intuitive Match Controls
-                  </h3>
-                  <p className="text-[var(--color-muted)]">
-                    Control score, timer, teams, and match events from one clean interface. Add cards and manage substitutions with a click.
-                  </p>
+                <div className="px-4 py-3 border-t border-[var(--color-border)] text-sm text-[var(--color-muted)]">
+                  Screenshot 1
                 </div>
               </div>
 
-              {/* Element Layout */}
               <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-xl overflow-hidden">
                 <Image
                   src="/screenshot-element-layout.png"
-                  alt="Sagitta Element Layout Editor"
+                  alt="Screenshot 2 - Element layout editor"
                   width={600}
                   height={400}
                   className="w-full h-auto"
                 />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-[var(--color-accent)] mb-2">
-                    Fully Customizable Layout
-                  </h3>
-                  <p className="text-[var(--color-muted)]">
-                    Position and size every element precisely. Adjust team names, logos, timer, and sponsor placements to match your venue.
-                  </p>
+                <div className="px-4 py-3 border-t border-[var(--color-border)] text-sm text-[var(--color-muted)]">
+                  Screenshot 2
                 </div>
               </div>
 
-              {/* Media Zones */}
               <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-xl overflow-hidden">
                 <Image
                   src="/screenshot-media-zones.png"
-                  alt="Sagitta Media Zones Settings"
+                  alt="Screenshot 3 - Media zones and sponsor settings"
                   width={600}
                   height={400}
                   className="w-full h-auto"
                 />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-[var(--color-accent)] mb-2">
-                    Media Zones & Sponsors
-                  </h3>
-                  <p className="text-[var(--color-muted)]">
-                    Set up sponsor loops, persistent tickers, and live video input. Manage all media zones from one centralized panel.
-                  </p>
+                <div className="px-4 py-3 border-t border-[var(--color-border)] text-sm text-[var(--color-muted)]">
+                  Screenshot 3
                 </div>
               </div>
 
-              {/* Presets */}
               <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-xl overflow-hidden">
                 <Image
                   src="/screenshot-presets.png"
-                  alt="Sagitta Layout Presets"
+                  alt="Screenshot 4 - Saved presets"
                   width={600}
                   height={400}
                   className="w-full h-auto"
                 />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-[var(--color-accent)] mb-2">
-                    Save & Load Presets
-                  </h3>
+                <div className="px-4 py-3 border-t border-[var(--color-border)] text-sm text-[var(--color-muted)]">
+                  Screenshot 4
+                </div>
+              </div>
+            </div>
+
+            {/* Text mapping separate to avoid confusion */}
+            <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-xl p-6 md:p-8">
+              <h3 className="text-xl font-semibold text-[var(--color-accent)] mb-6">
+                What each screenshot shows
+              </h3>
+              <div className="space-y-6">
+                <div>
+                  <p className="font-medium text-[var(--color-accent)] mb-1">Screenshot 1 — Match Control</p>
                   <p className="text-[var(--color-muted)]">
-                    Create unlimited layout presets for different competitions or venues. Switch between them instantly.
+                    Control score, timer, teams, and match events from one clean interface.
+                  </p>
+                </div>
+                <div>
+                  <p className="font-medium text-[var(--color-accent)] mb-1">Screenshot 2 — Element Layout</p>
+                  <p className="text-[var(--color-muted)]">
+                    Position and size scoreboard elements with precision for your venue.
+                  </p>
+                </div>
+                <div>
+                  <p className="font-medium text-[var(--color-accent)] mb-1">Screenshot 3 — Media Zones</p>
+                  <p className="text-[var(--color-muted)]">
+                    Configure sponsor ticker, commercial loop, and video input settings.
+                  </p>
+                </div>
+                <div>
+                  <p className="font-medium text-[var(--color-accent)] mb-1">Screenshot 4 — Presets</p>
+                  <p className="text-[var(--color-muted)]">
+                    Save and load complete setups for different competitions and matchday formats.
                   </p>
                 </div>
               </div>

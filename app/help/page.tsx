@@ -29,9 +29,9 @@ const troubleshootingFAQs = [
       "Double-check the key format: SGTA-XXXX-XXXX-XXXX. Make sure there are no leading/trailing spaces. If the problem persists, contact info@sagittascore.com with your order number.",
   },
   {
-    question: "The scoreboard is showing on my main screen, not the external display.",
+    question: "The layout position on screen is wrong.",
     answer:
-      'In Sagitta → Display Settings, manually select your external screen. Make sure macOS is set to "Extend" mode in System Settings → Displays.',
+      "Open Sagitta → Settings → Element Layout and adjust X/Y values for each element. Save the result as a preset so you can reuse it quickly.",
   },
   {
     question: "The timer is not running.",
@@ -46,7 +46,7 @@ const troubleshootingFAQs = [
   {
     question: "I've reached my activation limit.",
     answer:
-      "You can deactivate an older Mac from Sagitta → Preferences → License → Deactivate. If you no longer have access to that Mac, contact support.",
+      "You can deactivate an older Mac from Sagitta → Preferences → License → Deactivate. If you no longer have access to that Mac, contact info@sagittascore.com.",
   },
 ];
 
@@ -163,8 +163,10 @@ export default function HelpPage() {
                         Internet required
                       </h3>
                       <p className="help-text">
-                        Activation requires an internet connection the first time. After
-                        activation, Sagitta works fully offline.
+                        Activation requires an internet connection the first time. On every
+                        startup, Sagitta checks your license again. If there is no internet
+                        connection, the software remains active for 7 days. Restore internet
+                        within that period to reset the 7-day window.
                       </p>
                     </div>
 
@@ -203,11 +205,11 @@ export default function HelpPage() {
                     Setting Up a Match
                   </h2>
                   <ol className="help-steps">
-                    <li>Click "New Match" on the main screen.</li>
-                    <li>Enter home team name and away team name.</li>
-                    <li>Optionally upload team logos (PNG, max 2MB).</li>
-                    <li>Set match duration (default: 2 × 45 minutes).</li>
-                    <li>Click "Start Match" — the scoreboard screen will appear.</li>
+                    <li>Enter home team name and away team name in the control panel.</li>
+                    <li>Upload team logos (PNG recommended, transparent background supported).</li>
+                    <li>Adjust logo size and scoreboard layout as needed.</li>
+                    <li>Set the match timer and phase (first half, second half, extra time).</li>
+                    <li>The live scoreboard updates automatically as you control the match.</li>
                   </ol>
                 </section>
 
@@ -220,24 +222,24 @@ export default function HelpPage() {
                     Display & Screen Setup
                   </h2>
                   <p className="help-text mb-6">
-                    Sagitta sends the scoreboard to a second screen. Here's how to
-                    connect it.
+                    Sagitta layout positioning is controlled directly inside the app using
+                    X and Y coordinates for each element.
                   </p>
                   <ul className="help-bullets mb-6">
                     <li>
-                      Connect your external screen via HDMI, Thunderbolt, or use AirPlay
-                      for a wireless display.
+                      Open Settings and go to the Element Layout section.
                     </li>
                     <li>
-                      In macOS System Settings → Displays, ensure the external screen is
-                      detected and set to "Extend" mode (not Mirror).
+                      Select the element you want to position (Team A, Timer, Team B,
+                      Sponsor Ticker, etc.).
                     </li>
                     <li>
-                      In Sagitta, go to Display Settings and select your external screen
-                      from the dropdown.
+                      Use the X Position and Y Position sliders to place each element
+                      exactly where you want it on screen.
                     </li>
                     <li>
-                      Click "Preview" to test the output before the match starts.
+                      Fine-tune width, height, and score offsets, then save as a preset
+                      for quick reuse.
                     </li>
                   </ul>
 

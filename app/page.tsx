@@ -349,10 +349,10 @@ export default function Home() {
               <div className="flex justify-center lg:justify-end">
                 <div className="bg-[#1c1e21] border border-[var(--color-border)] rounded-2xl p-8 shadow-2xl max-w-md">
                   <Image
-                    src="/screenshot-remote-control.png"
-                    alt="Sagitta Remote Control Setup"
-                    width={1024}
-                    height={256}
+                    src="/screenshot-remote-control-phone.png"
+                    alt="Sagitta Remote Control on phone"
+                    width={590}
+                    height={1280}
                     quality={90}
                     className="w-full h-auto rounded-lg"
                   />
