@@ -20,11 +20,56 @@ export interface LicenseDB {
   [key: string]: License;
 }
 
-const LICENSES_PATH = path.join(process.cwd(), "data", "licenses.json");
-const LOG_PATH = path.join(process.cwd(), "data", "activation-log.json");
+const REPO_DATA_DIR = path.join(process.cwd(), "data");
+const DEFAULT_LICENSES_PATH = path.join(REPO_DATA_DIR, "licenses.json");
+const DEFAULT_LOG_PATH = path.join(REPO_DATA_DIR, "activation-log.json");
+
+// Configure persistent storage location via environment variables.
+// Recommended in production:
+//   SAGITTA_DATA_DIR=/absolute/persistent/path
+// or:
+//   LICENSES_PATH=/absolute/persistent/path/licenses.json
+//   ACTIVATION_LOG_PATH=/absolute/persistent/path/activation-log.json
+const DATA_DIR = process.env.SAGITTA_DATA_DIR?.trim() || REPO_DATA_DIR;
+const LICENSES_PATH =
+  process.env.LICENSES_PATH?.trim() || path.join(DATA_DIR, "licenses.json");
+const LOG_PATH =
+  process.env.ACTIVATION_LOG_PATH?.trim() ||
+  path.join(DATA_DIR, "activation-log.json");
+
+function ensureJSONFile(
+  targetPath: string,
+  defaultValue: object | unknown[]
+): void {
+  const dir = path.dirname(targetPath);
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir, { recursive: true });
+  }
+  if (!fs.existsSync(targetPath)) {
+    fs.writeFileSync(targetPath, JSON.stringify(defaultValue, null, 2));
+  }
+}
+
+function migrateFromRepoIfNeeded(): void {
+  // If using an external path and file doesn't exist yet, copy existing repo data once.
+  if (LICENSES_PATH !== DEFAULT_LICENSES_PATH && !fs.existsSync(LICENSES_PATH)) {
+    if (fs.existsSync(DEFAULT_LICENSES_PATH)) {
+      const raw = fs.readFileSync(DEFAULT_LICENSES_PATH, "utf-8");
+      fs.mkdirSync(path.dirname(LICENSES_PATH), { recursive: true });
+      fs.writeFileSync(LICENSES_PATH, raw);
+      return;
+    }
+  }
+  ensureJSONFile(LICENSES_PATH, {});
+}
+
+function ensureLogFile(): void {
+  ensureJSONFile(LOG_PATH, []);
+}
 
 export function getLicenses(): LicenseDB {
   try {
+    migrateFromRepoIfNeeded();
     const data = fs.readFileSync(LICENSES_PATH, "utf-8");
     return JSON.parse(data);
   } catch (error) {
@@ -33,6 +78,7 @@ export function getLicenses(): LicenseDB {
 }
 
 export function saveLicenses(licenses: LicenseDB): void {
+  migrateFromRepoIfNeeded();
   fs.writeFileSync(LICENSES_PATH, JSON.stringify(licenses, null, 2));
 }
 
@@ -131,6 +177,7 @@ export interface LogEntry {
 
 export function logActivation(entry: LogEntry): void {
   try {
+    ensureLogFile();
     let logs: LogEntry[] = [];
     try {
       const data = fs.readFileSync(LOG_PATH, "utf-8");
