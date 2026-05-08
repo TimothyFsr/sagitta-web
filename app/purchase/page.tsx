@@ -13,7 +13,7 @@ const faqs = [
   {
     question: "What if I get a new Mac?",
     answer:
-      "Contact us at support@sagitta.app with your license key and we'll transfer your activation to the new device. We don't charge for migrations.",
+      "Contact us at info@sagittascore.com with your license key and we'll transfer your activation to the new device. We don't charge for migrations.",
   },
   {
     question: "What's the difference between Lifetime and Yearly?",
@@ -141,7 +141,7 @@ export default function PurchasePage() {
                 </li>
               </ul>
               <a
-                href="mailto:sales@sagitta.app"
+                href="mailto:info@sagittascore.com"
                 className="block w-full text-center px-6 py-3 bg-[#e8e0d0] text-[#1c1e21] rounded-full font-medium hover:opacity-90 transition-opacity"
               >
                 {isLifetime ? "Buy Lifetime License" : "Buy Yearly License"}
@@ -199,7 +199,7 @@ export default function PurchasePage() {
                 </li>
               </ul>
               <a
-                href="mailto:sales@sagitta.app"
+                href="mailto:info@sagittascore.com"
                 className="block w-full text-center px-6 py-3 bg-[#e8e0d0] text-[#1c1e21] rounded-full font-medium hover:opacity-90 transition-opacity"
               >
                 {isLifetime ? "Buy Club Pro Lifetime" : "Buy Club Pro Yearly"}
@@ -211,7 +211,7 @@ export default function PurchasePage() {
           <div className="max-w-5xl mx-auto mt-8">
             <p className="text-sm text-[var(--color-muted)] text-center">
               Each license is tied to a single device. To migrate your license to a new Mac,
-              contact support@sagitta.app — we'll handle the transfer.
+              contact info@sagittascore.com — we'll handle the transfer.
             </p>
           </div>
         </div>
@@ -277,7 +277,7 @@ export default function PurchasePage() {
                   From €599 (hardware + setup)
                 </p>
                 <a
-                  href="mailto:sales@sagitta.app"
+                  href="mailto:info@sagittascore.com"
                   className="block w-full text-center px-6 py-3 bg-[#e8e0d0] text-[#1c1e21] rounded-full font-medium hover:opacity-90 transition-opacity"
                 >
                   Contact us for a quote
@@ -360,7 +360,7 @@ export default function PurchasePage() {
                       From €299 — contact us for a site assessment
                     </p>
                     <a
-                      href="mailto:sales@sagitta.app"
+                      href="mailto:info@sagittascore.com"
                       className="px-6 py-3 bg-[#e8e0d0] text-[#1c1e21] rounded-full font-medium hover:opacity-90 transition-opacity"
                     >
                       Contact us

@@ -26,7 +26,7 @@ const troubleshootingFAQs = [
   {
     question: "My license key isn't being accepted.",
     answer:
-      "Double-check the key format: SGTA-XXXX-XXXX-XXXX. Make sure there are no leading/trailing spaces. If the problem persists, contact support@sagitta.app with your order number.",
+      "Double-check the key format: SGTA-XXXX-XXXX-XXXX. Make sure there are no leading/trailing spaces. If the problem persists, contact info@sagittascore.com with your order number.",
   },
   {
     question: "The scoreboard is showing on my main screen, not the external display.",
@@ -185,8 +185,8 @@ export default function HelpPage() {
                       </h3>
                       <p className="help-text">
                         Contact{" "}
-                        <a href="mailto:support@sagitta.app" className="help-link">
-                          support@sagitta.app
+                        <a href="mailto:info@sagittascore.com" className="help-link">
+                          info@sagittascore.com
                         </a>{" "}
                         to transfer your license to a new Mac.
                       </p>
@@ -402,8 +402,8 @@ export default function HelpPage() {
                     <div className="space-y-3 text-[var(--color-text)]">
                       <p>
                         <strong>Email:</strong>{" "}
-                        <a href="mailto:support@sagitta.app" className="help-link">
-                          support@sagitta.app
+                        <a href="mailto:info@sagittascore.com" className="help-link">
+                          info@sagittascore.com
                         </a>
                       </p>
                       <p>
@@ -418,7 +418,7 @@ export default function HelpPage() {
                   </p>
 
                   <a
-                    href="mailto:support@sagitta.app"
+                    href="mailto:info@sagittascore.com"
                     className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-cta)] text-[var(--color-bg)] rounded-lg font-semibold hover:opacity-90 transition-opacity"
                   >
                     <Mail size={20} />

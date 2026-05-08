@@ -186,10 +186,10 @@ export default function ContactPage() {
                       <p className="text-red-400 text-sm">
                         Something went wrong. Please email us directly at{" "}
                         <a
-                          href="mailto:support@sagitta.app"
+                          href="mailto:info@sagittascore.com"
                           className="underline hover:text-red-300"
                         >
-                          support@sagitta.app
+                          info@sagittascore.com
                         </a>
                       </p>
                     </div>
@@ -237,7 +237,7 @@ export default function ContactPage() {
             </div>
 
             {/* RIGHT COLUMN — INFO CARDS (40%) */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="lg:col-span-2 space-y-8">
               {/* Card 1 — Email */}
               <div className="bg-[#1c1e21] border border-[var(--color-border)] rounded-xl p-6">
                 <div className="w-12 h-12 bg-[#e8e0d0] rounded-full flex items-center justify-center mb-4">
@@ -247,48 +247,30 @@ export default function ContactPage() {
                   Email
                 </h3>
                 <a
-                  href="mailto:support@sagitta.app"
+                  href="mailto:info@sagittascore.com"
                   className="text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors block mb-2"
                 >
-                  support@sagitta.app
+                  info@sagittascore.com
                 </a>
                 <p className="text-sm text-[var(--color-muted)]">
-                  We reply within 24 hours on working days
+                  General enquiries, sales, and support
                 </p>
               </div>
 
-              {/* Card 2 — Sales */}
+              {/* Card 2 — Support */}
               <div className="bg-[#1c1e21] border border-[var(--color-border)] rounded-xl p-6">
                 <div className="w-12 h-12 bg-[#e8e0d0] rounded-full flex items-center justify-center mb-4">
                   <Mail size={24} className="text-[#1c1e21]" />
                 </div>
                 <h3 className="text-lg font-semibold text-[var(--color-accent)] mb-2">
-                  Sales
-                </h3>
-                <a
-                  href="mailto:sales@sagitta.app"
-                  className="text-[var(--color-muted)] hover:text-[var(--color-accent)] transition-colors block mb-2"
-                >
-                  sales@sagitta.app
-                </a>
-                <p className="text-sm text-[var(--color-muted)]">
-                  Pricing, bundles, and preconfigured setups
-                </p>
-              </div>
-
-              {/* Card 3 — Hours */}
-              <div className="bg-[#1c1e21] border border-[var(--color-border)] rounded-xl p-6">
-                <div className="w-12 h-12 bg-[#e8e0d0] rounded-full flex items-center justify-center mb-4">
-                  <Clock size={24} className="text-[#1c1e21]" />
-                </div>
-                <h3 className="text-lg font-semibold text-[var(--color-accent)] mb-2">
-                  Hours
+                  Response Time
                 </h3>
                 <p className="text-[var(--color-muted)] mb-2">Within 24 hours</p>
                 <p className="text-sm text-[var(--color-muted)]">
                   Monday – Friday, 9:00 – 18:00 CET
                 </p>
               </div>
+
             </div>
           </div>
         </div>

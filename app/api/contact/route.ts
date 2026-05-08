@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     // Example with Resend:
     // const { data, error } = await resend.emails.send({
     //   from: 'Sagitta Contact Form <onboarding@resend.dev>',
-    //   to: ['support@sagitta.app'],
+    //   to: ['info@sagittascore.com'],
     //   subject: `Contact Form: ${subject}`,
     //   html: `
     //     <h2>New contact form submission</h2>
