@@ -36,7 +36,10 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const { plan, customerName, expiresAt } = await request.json();
+    const { plan, customerName, expiresAt, software } = await request.json();
+    const selectedSoftware = typeof software === 'string' && software.trim().length > 0
+      ? software.trim()
+      : 'football-scoring';
 
     // Validate plan
     if (!PLAN_ACTIVATIONS[plan]) {
@@ -65,6 +68,7 @@ export async function POST(request: NextRequest) {
     // Create license
     const newLicense = {
       plan,
+      software: selectedSoftware,
       maxActivations: PLAN_ACTIVATIONS[plan],
       activations: [],
       createdAt: new Date().toISOString(),

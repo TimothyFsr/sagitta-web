@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 interface License {
   key: string;
   plan: string;
+  software?: string;
   maxActivations: number;
   customerName?: string;
   expiresAt?: string;
@@ -38,6 +39,7 @@ export default function AdminDashboard() {
   // Form state
   const [newLicense, setNewLicense] = useState({
     plan: 'single',
+    software: 'football-scoring',
     customerName: '',
     expiresAt: '',
   });
@@ -85,7 +87,7 @@ export default function AdminDashboard() {
       if (data.success) {
         setMessage({ type: 'success', text: `License created: ${data.key}` });
         setShowCreateForm(false);
-        setNewLicense({ plan: 'single', customerName: '', expiresAt: '' });
+        setNewLicense({ plan: 'single', software: 'football-scoring', customerName: '', expiresAt: '' });
         loadData();
       } else {
         setMessage({ type: 'error', text: data.error || 'Failed to create license' });
@@ -212,7 +214,7 @@ export default function AdminDashboard() {
           <div className="bg-gray-800 rounded-lg p-6 border border-gray-700 mb-8">
             <h2 className="text-xl font-bold mb-4">Create New License</h2>
             <form onSubmit={handleCreateLicense} className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">
                     Plan
@@ -225,6 +227,20 @@ export default function AdminDashboard() {
                     <option value="single">Single (2 activations)</option>
                     <option value="pro">Pro (5 activations)</option>
                     <option value="federation">Federation (99 activations)</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">
+                    Software
+                  </label>
+                  <select
+                    value={newLicense.software}
+                    onChange={(e) => setNewLicense({ ...newLicense, software: e.target.value })}
+                    className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  >
+                    <option value="football-scoring">Football Scoring</option>
+                    <option value="basketball-scoring">Basketball Scoring (future)</option>
+                    <option value="multi-sport">Multi-Sport (future)</option>
                   </select>
                 </div>
                 <div>
@@ -271,6 +287,7 @@ export default function AdminDashboard() {
                   <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">License Key</th>
                   <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Customer</th>
                   <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Plan</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Software</th>
                   <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Activations</th>
                   <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Status</th>
                   <th className="px-6 py-4 text-left text-sm font-semibold text-gray-300">Actions</th>
@@ -293,6 +310,11 @@ export default function AdminDashboard() {
                     <td className="px-6 py-4">
                       <span className="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-sm">
                         {license.plan}
+                      </span>
+                    </td>
+                    <td className="px-6 py-4">
+                      <span className="px-2 py-1 bg-purple-500/20 text-purple-400 rounded text-sm">
+                        {license.software || 'football-scoring'}
                       </span>
                     </td>
                     <td className="px-6 py-4">

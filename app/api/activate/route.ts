@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
 
     // Parse request body
     const body = await request.json();
-    const { key, hardwareId } = body;
+    const { key, hardwareId, software } = body;
 
     // Validate input
     if (!key || !hardwareId) {
@@ -76,6 +76,21 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const licenseSoftware = license.software || "football-scoring";
+    if (software && software !== licenseSoftware) {
+      return NextResponse.json(
+        { error: "SOFTWARE_MISMATCH" },
+        { status: 403 }
+      );
+    }
+
+    if (license.expiresAt && new Date(license.expiresAt) < new Date()) {
+      return NextResponse.json(
+        { error: "LICENSE_EXPIRED" },
+        { status: 403 }
+      );
+    }
+
     // Attempt activation
     const result = addActivation(key, hardwareId);
 
@@ -116,6 +131,7 @@ export async function POST(request: NextRequest) {
       plan: license.plan,
       customerName: license.customerName || null,
       expiresAt: license.expiresAt || null,
+      software: licenseSoftware,
       activationsUsed: license.activations.length,
       activationsMax: license.maxActivations,
     });

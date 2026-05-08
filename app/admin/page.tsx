@@ -75,18 +75,6 @@ export default function AdminLogin() {
               {loading ? 'Logging in...' : 'Login'}
             </button>
           </form>
-
-          <div className="mt-6 p-4 bg-gray-900 rounded-lg border border-gray-700">
-            <p className="text-xs text-gray-400 mb-2">
-              <strong className="text-gray-300">First time setup:</strong>
-            </p>
-            <p className="text-xs text-gray-400">
-              Default password: <code className="bg-gray-800 px-2 py-1 rounded text-green-400">admin123</code>
-            </p>
-            <p className="text-xs text-gray-400 mt-2">
-              Change this in <code className="bg-gray-800 px-2 py-1 rounded">.env.local</code>
-            </p>
-          </div>
         </div>
       </div>
     </div>

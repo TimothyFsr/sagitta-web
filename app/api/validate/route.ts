@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
 
     // Parse request body
     const body = await request.json();
-    const { token, key, hardwareId } = body;
+    const { token, key, hardwareId, software } = body;
 
     let licenseKey: string;
     let hwId: string;
@@ -83,6 +83,21 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const licenseSoftware = license.software || "football-scoring";
+    if (software && software !== licenseSoftware) {
+      return NextResponse.json(
+        { success: false, isActive: false, message: "License is not valid for this software" },
+        { status: 403 }
+      );
+    }
+
+    if (license.expiresAt && new Date(license.expiresAt) < new Date()) {
+      return NextResponse.json(
+        { success: false, isActive: false, message: "License has expired" },
+        { status: 403 }
+      );
+    }
+
     // Check if this hardware ID is still activated
     const isActivated = license.activations.some(
       (a) => a.hardwareId === hwId
@@ -122,6 +137,9 @@ export async function POST(request: NextRequest) {
       isActive: true,
       message: "License is valid",
       plan: license.plan,
+      software: licenseSoftware,
+      customerName: license.customerName || null,
+      expiresAt: license.expiresAt || null,
       activationsUsed: license.activations.length,
       activationsMax: license.maxActivations,
     });

@@ -3,6 +3,7 @@ import path from "path";
 
 export interface License {
   plan: string;
+  software?: string;
   maxActivations: number;
   customerName?: string;
   expiresAt?: string;
