@@ -13,6 +13,7 @@ const NAV_LINKS = [
   { href: "/download", label: "Download" },
   { href: "/help", label: "Help" },
   { href: "/purchase", label: "Purchase" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Nav() {
@@ -57,7 +58,7 @@ export default function Nav() {
           </ul>
 
           {/* Desktop CTA - Right */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center gap-4">
             <Link
               href="/purchase"
               className="px-5 py-2 bg-[#e8e0d0] text-[#1c1e21] rounded-full font-medium text-sm hover:opacity-90 transition-opacity"
@@ -66,10 +67,10 @@ export default function Nav() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Only visible on mobile */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-[var(--color-accent)] p-2 min-h-[44px] min-w-[44px] flex items-center justify-center"
+            className="flex md:hidden text-[var(--color-accent)] p-2 min-h-[44px] min-w-[44px] items-center justify-center"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
           >

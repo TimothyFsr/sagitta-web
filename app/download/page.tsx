@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Download, Check, AlertCircle } from "lucide-react";
 import { Metadata } from "next";
 
@@ -160,9 +161,103 @@ export default function DownloadPage() {
       </section>
 
       {/* ========================================
-          SECTION 4 — NOT ON MAC?
+          SECTION 4 — WHAT'S INCLUDED
           ======================================== */}
       <section className="bg-[var(--color-surface)] py-20">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-[var(--color-accent)] mb-4 text-center">
+              What's included
+            </h2>
+            <p className="text-lg text-[var(--color-muted)] mb-12 text-center max-w-2xl mx-auto">
+              A complete professional scoreboard system with intuitive controls and powerful customization.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Match Control */}
+              <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-xl overflow-hidden">
+                <Image
+                  src="/screenshot-match-control.png"
+                  alt="Sagitta Match Control Panel"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-[var(--color-accent)] mb-2">
+                    Intuitive Match Controls
+                  </h3>
+                  <p className="text-[var(--color-muted)]">
+                    Control score, timer, teams, and match events from one clean interface. Add cards and manage substitutions with a click.
+                  </p>
+                </div>
+              </div>
+
+              {/* Element Layout */}
+              <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-xl overflow-hidden">
+                <Image
+                  src="/screenshot-element-layout.png"
+                  alt="Sagitta Element Layout Editor"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-[var(--color-accent)] mb-2">
+                    Fully Customizable Layout
+                  </h3>
+                  <p className="text-[var(--color-muted)]">
+                    Position and size every element precisely. Adjust team names, logos, timer, and sponsor placements to match your venue.
+                  </p>
+                </div>
+              </div>
+
+              {/* Media Zones */}
+              <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-xl overflow-hidden">
+                <Image
+                  src="/screenshot-media-zones.png"
+                  alt="Sagitta Media Zones Settings"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-[var(--color-accent)] mb-2">
+                    Media Zones & Sponsors
+                  </h3>
+                  <p className="text-[var(--color-muted)]">
+                    Set up sponsor loops, persistent tickers, and live video input. Manage all media zones from one centralized panel.
+                  </p>
+                </div>
+              </div>
+
+              {/* Presets */}
+              <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-xl overflow-hidden">
+                <Image
+                  src="/screenshot-presets.png"
+                  alt="Sagitta Layout Presets"
+                  width={600}
+                  height={400}
+                  className="w-full h-auto"
+                />
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-[var(--color-accent)] mb-2">
+                    Save & Load Presets
+                  </h3>
+                  <p className="text-[var(--color-muted)]">
+                    Create unlimited layout presets for different competitions or venues. Switch between them instantly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================
+          SECTION 5 — NOT ON MAC?
+          ======================================== */}
+      <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-2xl mx-auto">
             <div className="bg-[var(--color-bg)] border border-[var(--color-border)] rounded-xl p-8 text-center">

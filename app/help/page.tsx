@@ -11,6 +11,7 @@ const sections = [
   { id: "activating-license", label: "Activating Your License" },
   { id: "setting-up-match", label: "Setting Up a Match" },
   { id: "display-setup", label: "Display & Screen Setup" },
+  { id: "remote-control", label: "Remote Control Setup" },
   { id: "match-controls", label: "Match Controls" },
   { id: "troubleshooting", label: "Troubleshooting" },
   { id: "contact-support", label: "Contact Support" },
@@ -249,7 +250,90 @@ export default function HelpPage() {
                   </div>
                 </section>
 
-                {/* Section 5: Match Controls */}
+                {/* Section 5: Remote Control Setup */}
+                <section id="remote-control">
+                  <h2
+                    className="text-[32px] font-normal text-[var(--color-accent)] mb-6"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    Remote Control Setup
+                  </h2>
+                  <p className="help-text mb-6">
+                    Sagitta supports wireless remote control over a local network. Once your
+                    Mac and your control device are on the same Wi-Fi, you can control the
+                    scoreboard from anywhere around the pitch.
+                  </p>
+
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-[var(--color-accent)] mb-4">
+                      What you can control remotely
+                    </h3>
+                    <ul className="help-bullets">
+                      <li>Score (home and away)</li>
+                      <li>Match timer (start, pause, reset)</li>
+                      <li>Match events (goals, cards, substitutions)</li>
+                      <li>Sponsor loop (start, stop, next)</li>
+                      <li>Half-time / Full-time state</li>
+                    </ul>
+                  </div>
+
+                  <div className="mb-8">
+                    <h3 className="text-xl font-semibold text-[var(--color-accent)] mb-4">
+                      How to connect
+                    </h3>
+                    <ol className="help-steps">
+                      <li>Make sure both devices are on the same Wi-Fi network.</li>
+                      <li>Open Sagitta → Settings → Remote Control and enable it.</li>
+                      <li>
+                        Sagitta shows a local IP address and port (e.g.{" "}
+                        <code className="help-code">192.168.1.45:8080</code>).
+                      </li>
+                      <li>
+                        On your control device, open a browser and go to that address.
+                      </li>
+                      <li>
+                        The Sagitta remote control interface loads — no app install needed.
+                      </li>
+                    </ol>
+                  </div>
+
+                  <div className="bg-[var(--color-surface)] border-l-4 border-[var(--color-accent)] rounded-r-lg p-6 mb-8">
+                    <p className="help-text">
+                      <strong>Tip:</strong> For the most reliable setup at a ground, we
+                      recommend a dedicated local Wi-Fi network. Ask us about our Wireless
+                      Network Installation on the{" "}
+                      <a href="/purchase" className="help-link">
+                        Purchase page
+                      </a>
+                      .
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-[var(--color-accent)] mb-4">
+                      Troubleshooting
+                    </h3>
+                    <ul className="help-bullets space-y-4">
+                      <li>
+                        <strong>"Can't connect"</strong> — Check that both devices are on the
+                        same network and that Remote Control is enabled in Sagitta. Your Mac
+                        firewall may need Sagitta added as an exception in System Settings →
+                        Network → Firewall.
+                      </li>
+                      <li>
+                        <strong>"Interface loads but changes don't appear"</strong> — Refresh
+                        the browser on the control device.
+                      </li>
+                      <li>
+                        <strong>"IP keeps changing"</strong> — Assign a static IP to the Mac
+                        in your router settings, or use our dedicated network installation
+                        service.
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+
+                {/* Section 6: Match Controls */}
                 <section id="match-controls">
                   <h2
                     className="text-[32px] font-normal text-[var(--color-accent)] mb-6"
@@ -291,7 +375,7 @@ export default function HelpPage() {
                   </ul>
                 </section>
 
-                {/* Section 6: Troubleshooting */}
+                {/* Section 7: Troubleshooting */}
                 <section id="troubleshooting">
                   <h2
                     className="text-[32px] font-normal text-[var(--color-accent)] mb-6"
@@ -302,7 +386,7 @@ export default function HelpPage() {
                   <FAQAccordion items={troubleshootingFAQs} />
                 </section>
 
-                {/* Section 7: Contact Support */}
+                {/* Section 8: Contact Support */}
                 <section id="contact-support">
                   <h2
                     className="text-[32px] font-normal text-[var(--color-accent)] mb-6"
